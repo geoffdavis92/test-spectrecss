@@ -22,5 +22,8 @@
     "grunt-contrib-sass": "^1.0.0",
     "grunt-contrib-watch": "^1.0.0",
     "grunt-eslint": "^18.1.0"
+  },
+  "dependencies": {
+    "jstransformer-markdown-it": "^0.2.3"
   }
 }

@@ -2293,6 +2293,10 @@ h1, footer {
   text-align: center;
 }
 
+blockquote cite a {
+  text-decoration: none;
+}
+
 .material-icons {
   margin-right: 5px;
   vertical-align: bottom;
@@ -2325,6 +2329,23 @@ main.index .post .post-header .post-date, main.index .post header .post-date {
 }
 main.index .post .post-preview, main.index .post main {
   font-size: 14px;
+}
+
+main.post .post-header, main.post header {
+  margin: 5px auto 10px;
+}
+main.post .post-header .post-title, main.post .post-header h3, main.post header .post-title, main.post header h3 {
+  margin-bottom: 5px;
+}
+main.post .post-header .post-author, main.post .post-header .post-date, main.post header .post-author, main.post header .post-date {
+  display: inline-block;
+  vertical-align: bottom;
+}
+main.post .post-header .post-author, main.post header .post-author {
+  margin: 0 10px 5px 0;
+}
+main.post .post-header .post-date, main.post header .post-date {
+  float: right;
 }
 
 /*# sourceMappingURL=main.css.map */

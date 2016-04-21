@@ -3,9 +3,17 @@ block pageVariables
 include parts/head
 body.container
 	section.columns
-		.column.col-2
-		.column.col-8
+		.column.col-3
+		.column.col-6
 			main(class=`post ${page.classList}`)
-				block content
-		.column.col-2
+				header.post-header
+					h3.post-title #{post.title}
+					h4.post-author: small by #{post.author}
+					time.post-date(datetime=post.date) #[i.material-icons schedule] #{post.date}
+				article.post-body
+					block content
+				if post.aboutAuthor
+					footer.post-footer
+						block aboutAuthor
+		.column.col-3
 include parts/footer

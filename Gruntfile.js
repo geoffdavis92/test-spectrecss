@@ -30,6 +30,11 @@ module.exports = function(grunt) {
 				options: {
 					data: function() {
 						return require('./data/locals.dev.json')
+					},
+					filters: {
+						markdown: function() {
+							return require('jstransformer-markdown-it')
+						}
 					}
 				},
 				files: [{
