@@ -1,8 +1,23 @@
 //- Mixins
-mixin wedding(n,d,l,a,bp)
-	tr(data-wedding=n data-wedding-date=d)
-		td= n
+mixin wedding(n,d,l,a,bp,c)
+	tr(data-wedding-name=n data-wedding-date=d data-wedding-location=l data-wedding-attendance=a data-wedding-role=bp data-wedding-couple=c)
+		td: span.tooltip.tooltip-left(data-tooltip="#{c[0]} and #{c[1]}") #{n}
 		td= d
 		td= l
 		td= a
-		td= bp
+		td
+			if bp !== 'no'
+				small.label.label-primary #{bp}
+			else
+				span #{bp}
+mixin modal(id,title)
+	.modal(id="#{id}")
+		.modal-overlay
+		.modal-container
+			.modal-header
+				a.btn.btn-clear.float-right(href="##{id}" data-close="modal")
+				.modal-title= title
+			.modal-body
+				block modalBody
+			.modal-footer
+				a.btn.btn-primary(href="##{id}" data-close="modal") Close

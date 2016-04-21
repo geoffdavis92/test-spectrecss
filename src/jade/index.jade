@@ -2,8 +2,14 @@ extends layouts/default
 block pageVariables
 	- var page = {}
 	- page['classList'] = 'index'
-	- page['scripts'] = ['checkDate']
+	- page['scripts'] = ['toast','checkDate','viewNext']
+	- page['title'] = 'Home'
 block content
+	.toast
+		button.btn.btn-clear.float-right
+		i.material-icons.icon-info_outline info_outline
+		span One wedding coming up! &nbsp;
+		a(href="#viewNext" data-open="modal") view&nbsp;&raquo;
 	h1 Spectre test
 	table.table
 		thead
@@ -16,8 +22,11 @@ block content
 				th attending
 				th bridal party?
 		tbody
-			+wedding('Sirridge','May 7','Colfax, IA','yes','Usher')
-			+wedding('Roper','May 20','Ft. Worth, TX','no','no')
-			+wedding('Stamps','May 21','Huntsville, AL','yes','no')
-			+wedding('Lowe','May 22','Howell, AR','yes','no')
-			+wedding('Masey','July 10','Albany, NY','yes','Groomsman')
+			each wedding in weddings
+				+wedding(wedding.name,wedding.date,wedding.location,wedding.attending,wedding.bridalparty,wedding.couple)
+	+modal('viewNext','Your next wedding will be:')
+		block modalBody
+			h3: u The #[span.wedding#name] Wedding
+			p The marriage of #[span.wedding#couple]#[br]on #[span.wedding#date], 2016#[br]in #[span.wedding#location].
+			p You are marked as #[span.wedding#attendance].
+			p#rolep You will be participating as #[span.wedding#role].

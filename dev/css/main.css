@@ -2293,6 +2293,11 @@ h1, footer {
   text-align: center;
 }
 
+.material-icons {
+  margin-right: 5px;
+  vertical-align: bottom;
+}
+
 footer {
   background-color: #e6e6e6;
   bottom: 0;

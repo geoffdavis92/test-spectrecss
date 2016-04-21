@@ -9,12 +9,15 @@ module.exports = function(grunt) {
 			}]
 		},
 		watch: {
+			options: {
+				livereload: 35730
+			},
 			jade: {
-				files: ['./src/**/*.jade'],
+				files: ['./src/**/*.jade','./data/locals.dev.json'],
 				tasks: ['jade:dev']
 			},
 			js: {
-				files: ['./src/js/**/*.js'],
+				files: ['./src/js/**/*.js','./src/js/**/*.*.js'],
 				tasks: [/*'eslint',*/'babel:dev']
 			},
 			sass: {
@@ -72,7 +75,7 @@ module.exports = function(grunt) {
 				files: [{
 					expand: true,
 					cwd: './src/js',
-					src: ['*.js'],
+					src: ['*.js','*.*.js'],
 					dest: './dev/js/',
 					ext: '.js'
 				}]

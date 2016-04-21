@@ -1,1 +1,55 @@
-{}
+{
+	"env": "dev",
+	"utilities": ["array_each"],
+	"sitescripts": ["modal"],
+	"weddings": [
+		{
+			"name": "Sirridge",
+			"date":"January 7",
+			"location":"Colfax, IA",
+			"attending":"yes",
+			"bridalparty":"Usher",
+			"couple": ["Chris Sirridge","Chelsey Patterson"]
+		},
+		{
+			"name": "Roper",
+			"date":"May 20",
+			"location":"Ft. Worth, TX", 
+			"attending":"no",
+			"bridalparty":"no",
+			"couple": ["Dane Roper","Brittany Hirsch"]
+		},
+		{
+			"name": "Stamps",
+			"date":"May 21",
+			"location":"Huntsville, AL",
+			"attending":"yes",
+			"bridalparty":"no",
+			"couple": ["Dalton Stamps","Danielle Berryman"]
+		},
+		{
+			"name": "Lowe",
+			"date":"May 22",
+			"location":"Howell, AR",
+			"attending":"yes",
+			"bridalparty":"no",
+			"couple": ["Hayden Lowe","Madison Pittman"]
+		},
+		{
+			"name": "Davis",
+			"date":"July 16",
+			"location":"Paron, AR",
+			"attending":"no",
+			"bridalparty":"no",
+			"couple": ["Jace Davis","Carly Trulock"]
+		},
+		{
+			"name": "Masey",
+			"date":"July 17",
+			"location":"Albany, NY",
+			"attending":"yes",
+			"bridalparty":"Groomsman",
+			"couple": ["Ryan Masey","Sam Wolf"]
+		}
+	]
+}

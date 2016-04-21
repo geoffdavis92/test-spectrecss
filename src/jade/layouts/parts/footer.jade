@@ -1,6 +1,10 @@
 footer.
 	&copy;2016 Geoff Davis
-
+if sitescripts
+	for file in sitescripts
+		script(src="/js/#{file}.js")
 if page.scripts
 	for file in page.scripts
 		script(src="/js/#{file}.js")
+if env === 'dev'
+	script(src="//localhost:35730/livereload.js")

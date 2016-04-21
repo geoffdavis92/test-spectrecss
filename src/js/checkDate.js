@@ -1,33 +1,33 @@
 // checkDate
 const compare = function(a,b) {
-	let diffArr = []
-	// if(typeof a === 'array' && typeof b === 'array') {
-		for(let i=0;i<2;i++) {
-			diffArr.push(a[i] - b[i] > 0 ? a[i] - b[i] : -1 * (a[i] - b[1]))
-		}
-		if(diffArr < diff) {
-			return diff = diffArr
-		}
-	// } else {
-		// console.error('both arguments must be Arrays')
-		// return false
-	// }
+	let diffArr = [],
+		months = (b[0] - a[0]) <= 1 && (b[1] - a[1]) <= 0 ? 0 : (b[1] < a[1]) ? (b[0] - a[0] - 1) : (b[0] - a[0]),
+		days = (b[1]) + (30 - a[1])
+	if(a[0] === b[0] && a[1] > b[1]) {
+		return 366
+	} else {
+		return (30 * months) + days
+	}
 }
 const today = function() {
 	let d = new Date()
 	return [d.getMonth(),d.getDate()]
 }
 const weddingArr = []
-const weddings = document.querySelectorAll('[data-wedding]')
-let diff = today()
+const weddings = document.querySelectorAll('[data-wedding-name]')
+let diff = {id:'',length:365}
 
 for(let item=0;item<weddings.length;item++) {
 	let _ = weddings[item]
 	if(_.getAttribute) {
-		// weddingArr.push(_.getAttribute('data-wedding-date'))
 		let date = new Date(_.getAttribute('data-wedding-date'))
+		let attend = _.getAttribute('data-wedding-attendance') === 'yes' ? true : false
 		date = [date.getMonth(),date.getDate()]
-		console.log(today(),date)
-		compare(today(),date)
+		let difference = compare(today(),date)
+		if(diff.length > difference && attend) {
+			diff['length'] = difference
+			diff['id'] = _.getAttribute('data-wedding-name')
+			_.setAttribute('class','selected')
+		}
 	}
 }

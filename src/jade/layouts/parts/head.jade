@@ -1,7 +1,11 @@
 doctype html
 head
-	if page.pageTitle
-		title #{pageTitle} | Spectre
+	if page.title
+		title #{page.title} | Spectre
 	else
 		title Spectre Test
+	link(rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" type="text/css")
 	link(rel="stylesheet" href="css/main.css" type="text/css")
+	if utilities
+		each file in utilities
+			script(src="/js/#{file}.js")
