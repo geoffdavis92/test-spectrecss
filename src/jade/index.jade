@@ -24,9 +24,14 @@ block content
 		tbody
 			each wedding in weddings
 				+wedding(wedding.name,wedding.date,wedding.location,wedding.attending,wedding.bridalparty,wedding.couple)
-	+modal('viewNext','Your next wedding will be:')
+	br
+	+post('Learning Spectre.css','Geoff Davis','21 April 2016','posts/learning-spectre-css')
+		block postPreview
+			p #[span.highlight Spectre.css] is a new CSS framework aiming to slim down your development time with an easy-to-use yet powerful and extensible design system.
+
+	+modal('viewNext','Your next wedding is:')
 		block modalBody
-			h3: u The #[span.wedding#name] Wedding
-			p The marriage of #[span.wedding#couple]#[br]on #[span.wedding#date], 2016#[br]in #[span.wedding#location].
-			p You are marked as #[span.wedding#attendance].
-			p#rolep You will be participating as #[span.wedding#role].
+			h3: #[u The #[span.wedding#name] Weddin]g
+			p The marriage of #[em: span.wedding#couple]#[br]on #[strong: span.wedding#date]#[strong , 2016]#[br]in #[a.loc-link(target="_blank"): strong: span.wedding#location].
+			p You are marked as #[strong: span.wedding#attendance].
+			p#rolep You will be participating as #[strong: span.wedding#role].

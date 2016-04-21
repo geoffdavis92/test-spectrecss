@@ -14,6 +14,11 @@ for(let item in dataset) {
 	} else if (prop === 'attendance') {
 		let str = dataset[item] === 'yes' ? 'attending' : 'not attending'
 		el.innerText = str
+	} else if (prop === 'location') {
+		let linkEl = document.querySelector('.modal#viewNext .loc-link')
+		let str = dataset[item].split(', ')
+		linkEl.setAttribute('href',`https://www.google.com/maps/search/${str[0]},%20${str[1]}?hl=en&source=opensearch`)
+		el.innerText = dataset[item]
 	} else if (prop === 'role') {
 		if (dataset[item] !== 'no') {
 			let str = dataset[item][0].toLowerCase().search(/a|e|i|o|u/) === 0 ? `an ${dataset[item]}` : `a ${dataset[item]}`

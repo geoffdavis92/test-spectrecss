@@ -1,0 +1,8 @@
+newpost() {
+	mkdir src/jade/posts/$1;
+	touch src/jade/posts/$1/index.jade;
+	printf 'extends ../../layouts/post\n' > src/jade/posts/$1/index.jade
+	printf 'block pageVariables\n	- var page = {}' >> src/jade/posts/$1/index
+	.jade;
+	printf 'block pageVariables\n	- var post = {}' >> src/jade/posts/$1/index.jade;
+}

@@ -1,9 +1,10 @@
 //- Mixins
 mixin wedding(n,d,l,a,bp,c)
+	- var str = l.split(', ')
 	tr(data-wedding-name=n data-wedding-date=d data-wedding-location=l data-wedding-attendance=a data-wedding-role=bp data-wedding-couple=c)
 		td: span.tooltip.tooltip-left(data-tooltip="#{c[0]} and #{c[1]}") #{n}
 		td= d
-		td= l
+		td: a(href="https://www.google.com/maps/search/#{str[0]},%20#{str[1]}?hl=en&source=opensearch" target="_blank")= l
 		td= a
 		td
 			if bp !== 'no'
@@ -21,3 +22,13 @@ mixin modal(id,title)
 				block modalBody
 			.modal-footer
 				a.btn.btn-primary(href="##{id}" data-close="modal") Close
+mixin post(title,author,date,link)
+	article.post
+		header.post-header
+			h3.post-title #{title}
+			h4.post-author: small by #{author}
+			time.post-date(datetime=date) #[i.material-icons schedule] #{date}
+		main.post-preview
+			block postPreview
+		footer.post-footer
+			a.btn.btn-block(href=link) Read

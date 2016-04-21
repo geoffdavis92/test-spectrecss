@@ -1,7 +1,7 @@
 // checkDate
 const compare = function(a,b) {
 	let diffArr = [],
-		months = (b[0] - a[0]) <= 1 && (b[1] - a[1]) <= 0 ? 0 : (b[1] < a[1]) ? (b[0] - a[0] - 1) : (b[0] - a[0]),
+		months = (b[0] - a[0]) <= 1 ? (-1 * 5 * (b[0] - a[0])) : (b[1] < a[1]) ? (b[0] - a[0] - 1) : (b[0] - a[0]),
 		days = (b[1]) + (30 - a[1])
 	if(a[0] === b[0] && a[1] > b[1]) {
 		return 366
