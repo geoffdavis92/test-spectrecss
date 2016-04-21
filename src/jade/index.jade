@@ -1,0 +1,23 @@
+extends layouts/default
+block pageVariables
+	- var page = {}
+	- page['classList'] = 'index'
+	- page['scripts'] = ['checkDate']
+block content
+	h1 Spectre test
+	table.table
+		thead
+			tr
+				th.title.text-center(colspan="5") Weddings 2016
+			tr
+				th name
+				th date
+				th location
+				th attending
+				th bridal party?
+		tbody
+			+wedding('Sirridge','May 7','Colfax, IA','yes','Usher')
+			+wedding('Roper','May 20','Ft. Worth, TX','no','no')
+			+wedding('Stamps','May 21','Huntsville, AL','yes','no')
+			+wedding('Lowe','May 22','Howell, AR','yes','no')
+			+wedding('Masey','July 10','Albany, NY','yes','Groomsman')

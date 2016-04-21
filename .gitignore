@@ -1,3 +1,5 @@
 # spectrecss-test ignores... 
 node_modules 
-.sass-cache
+.sass-cache 
+dev 
+public

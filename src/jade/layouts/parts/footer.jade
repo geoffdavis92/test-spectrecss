@@ -1,0 +1,6 @@
+footer.
+	&copy;2016 Geoff Davis
+
+if page.scripts
+	for file in page.scripts
+		script(src="/js/#{file}.js")

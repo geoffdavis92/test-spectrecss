@@ -1,0 +1,11 @@
+include parts/mixins
+block pageVariables
+include parts/head
+body.container
+	section.columns
+		.column.col-3
+		.column.col-6
+			main(class=`${page.classList}`)
+				block content
+		.column.col-3
+include parts/footer

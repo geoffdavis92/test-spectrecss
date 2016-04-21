@@ -1871,38 +1871,38 @@ textarea.form-input {
   display: none !important;
 }
 .visible {
-  visibility: visible;
+  visibility: visible !important;
 }
 .invisible {
-  visibility: hidden;
+  visibility: hidden !important;
 }
 .text-hide {
-  background-color: transparent;
+  background-color: transparent !important;
   border: 0;
-  color: transparent;
+  color: transparent !important;
   font: 0/0 a;
-  text-shadow: none;
+  text-shadow: none !important;
 }
 .text-left {
-  text-align: left;
+  text-align: left !important;
 }
 .text-right {
-  text-align: right;
+  text-align: right !important;
 }
 .text-center {
-  text-align: center;
+  text-align: center !important;
 }
 .text-justify {
-  text-align: justify;
+  text-align: justify !important;
 }
 .text-lowercase {
-  text-transform: lowercase;
+  text-transform: lowercase !important;
 }
 .text-uppercase {
-  text-transform: uppercase;
+  text-transform: uppercase !important;
 }
 .text-capitalize {
-  text-transform: capitalize;
+  text-transform: capitalize !important;
 }
 .text-normal {
   font-weight: normal;

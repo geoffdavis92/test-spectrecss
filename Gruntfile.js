@@ -14,11 +14,11 @@ module.exports = function(grunt) {
 				tasks: ['jade:dev']
 			},
 			js: {
-				files: ['./src/js/*.js'],
-				tasks: ['eslint','babel:dev']
+				files: ['./src/js/**/*.js'],
+				tasks: [/*'eslint',*/'babel:dev']
 			},
 			sass: {
-				files: ['./src/sass/**/*.sass'],
+				files: ['./src/sass/**/**/*.sass'],
 				tasks: ['sass:dev']
 			}
 		},
@@ -32,7 +32,7 @@ module.exports = function(grunt) {
 				files: [{
 					expand: true,
 					cwd: './src/jade/',
-					src: ['*.jade'],
+					src: ['**/**/*.jade','!layouts/*.jade','!layouts/parts/*.jade'],
 					dest: './dev/',
 					ext: '.html'
 				}]
@@ -71,9 +71,9 @@ module.exports = function(grunt) {
 				},
 				files: [{
 					expand: true,
-					cwd: './src/js/',
+					cwd: './src/js',
 					src: ['*.js'],
-					dest: './src/js/',
+					dest: './dev/js/',
 					ext: '.js'
 				}]
 			},

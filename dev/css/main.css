@@ -2153,47 +2153,47 @@ textarea.form-input {
 }
 
 .visible {
-  visibility: visible;
+  visibility: visible !important;
 }
 
 .invisible {
-  visibility: hidden;
+  visibility: hidden !important;
 }
 
 .text-hide {
-  background-color: transparent;
+  background-color: transparent !important;
   border: 0;
-  color: transparent;
+  color: transparent !important;
   font: 0/0 a;
-  text-shadow: none;
+  text-shadow: none !important;
 }
 
 .text-left {
-  text-align: left;
+  text-align: left !important;
 }
 
 .text-right {
-  text-align: right;
+  text-align: right !important;
 }
 
 .text-center {
-  text-align: center;
+  text-align: center !important;
 }
 
 .text-justify {
-  text-align: justify;
+  text-align: justify !important;
 }
 
 .text-lowercase {
-  text-transform: lowercase;
+  text-transform: lowercase !important;
 }
 
 .text-uppercase {
-  text-transform: uppercase;
+  text-transform: uppercase !important;
 }
 
 .text-capitalize {
-  text-transform: capitalize;
+  text-transform: capitalize !important;
 }
 
 .text-normal {
@@ -2277,6 +2277,29 @@ textarea.form-input {
   position: absolute;
   top: 50%;
   width: 1.6rem;
+}
+
+body {
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+body {
+  font-size: 18px;
+  font-weight: 400;
+}
+
+h1, footer {
+  text-align: center;
+}
+
+footer {
+  background-color: #e6e6e6;
+  bottom: 0;
+  left: 0;
+  padding: 25px 0;
+  position: absolute;
+  width: 100%;
 }
 
 /*# sourceMappingURL=main.css.map */
