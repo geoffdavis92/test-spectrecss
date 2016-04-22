@@ -32,3 +32,8 @@ mixin post(title,author,date,link)
 			block postPreview
 		footer.post-footer
 			a.btn.btn-block(href=link) Read
+mixin cta(ctaText,ctaBtnText)
+	.col-5
+		div.cta
+			p.text-center= ctaText
+			a.btn.btn-block.btn-primary= ctaBtnText

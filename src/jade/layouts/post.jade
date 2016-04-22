@@ -1,10 +1,11 @@
 include parts/mixins
 block pageVariables
 include parts/head
-body.container
+body.container.layout-post
 	section.columns
 		.column.col-3
 		.column.col-6
+			p.backbtn: a(href="/") &laquo;&nbsp;back
 			main(class=`post ${page.classList}`)
 				header.post-header
 					h3.post-title #{post.title}
