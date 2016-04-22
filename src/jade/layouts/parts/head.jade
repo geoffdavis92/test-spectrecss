@@ -1,9 +1,11 @@
 doctype html
 head
 	if page.title
-		title #{page.title} | Spectre
+		title #{page.title} | MyWeddingCalendar
+	else if post.title
+		title #{post.title} | MyWeddingCalendar
 	else
-		title Spectre Test
+		title MyWeddingCalendar
 	link(rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" type="text/css")
 	link(rel="stylesheet" href="/css/main.css" type="text/css")
 	if utilities

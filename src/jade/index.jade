@@ -10,7 +10,7 @@ block content
 		i.material-icons.icon-info_outline info_outline
 		span One wedding coming up! &nbsp;
 		a(href="#viewNext" data-open="modal") view&nbsp;&raquo;
-	h1 Spectre test
+	h1 MyWeddingCalendar
 	table.table
 		thead
 			tr
@@ -26,12 +26,14 @@ block content
 				+wedding(wedding.name,wedding.date,wedding.location,wedding.attending,wedding.bridalparty,wedding.couple)
 	br
 	+post('Learning Spectre.css','Geoff Davis','21 April 2016','posts/learning-spectre-css')
-		block postPreview
-			p #[span.highlight Spectre.css] is a new CSS framework aiming to slim down your development time with an easy-to-use yet powerful and extensible design system.
+		p #[span.highlight Spectre.css] is a new CSS framework aiming to slim down your development time with an easy-to-use yet powerful and extensible design system.
+	+post('MyWeddingCalendar','Geoff Davis','22 April 2016','posts/my-wedding-calendar')
+		p #[span.highlight MyWeddingCalendar] is a simple site/app that tracks my upcoming wedding dates, based on data that I provided. I sketched this with Spectre.css, and I'm excited to show it to you.
+	+post('Travel: 2013','Geoff Davis','22 April 2016','posts/travel-2013')
+		p 2013 was a big year; we had X_EVENT, Y_EVENT, and Z_EVENT. It was also the year that I was blessed with the opportunity to study abroad.
 
 	+modal('viewNext','Your next wedding is:')
-		block modalBody
 			h3: #[u The #[span.wedding#name] Weddin]g
-			p The marriage of #[em: span.wedding#couple]#[br]on #[strong: span.wedding#date]#[strong , 2016]#[br]in #[a.loc-link(target="_blank"): strong: span.wedding#location].
+			p The marriage of #[em: span.wedding#couple]#[br]on #[strong: span.wedding#date]#[strong , 2016] in #[a.loc-link(target="_blank"): strong: span.wedding#location].
 			p You are marked as #[strong: span.wedding#attendance].
 			p#rolep You will be participating as #[strong: span.wedding#role].

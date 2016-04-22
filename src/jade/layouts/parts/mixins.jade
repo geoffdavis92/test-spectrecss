@@ -1,4 +1,54 @@
 //- Mixins
+
+mixin breadcrumbs(crumbs)
+	ul.breadcrumb
+		each item in crumbs
+			li.breadcrumb-item
+				a(href=item.url)= item.title
+		block
+
+mixin cta(ctaText,ctaBtnText,ctaBtnLink,isInternal)
+	.col-4
+		div.cta
+			p.text-center= ctaText
+			if isInternal 
+				a.btn.btn-block.btn-primary(href=ctaBtnLink)= ctaBtnText
+			else
+				a.btn.btn-block.btn-primary(href=ctaBtnLink target="_blank")= ctaBtnText
+
+mixin menu(id,elements)
+	.menu-container.menu-toggle.hide(id=id)
+		//- .menu-bg-click
+		ul.menu
+			li.menu-header
+				span.menu-header-text= id.toUpperCase()
+			each item in elements
+				li.menu-item
+					a(href=item.url)= item.title
+
+mixin modal(id,title)
+	.modal(id="#{id}")
+		.modal-overlay
+		.modal-container
+			.modal-header
+				a.btn.btn-clear.float-right(href="##{id}" data-close="modal")
+				.modal-title= title
+			.modal-body
+				block
+			.modal-footer
+				a.btn.btn-primary(href="##{id}" data-close="modal") Close
+
+mixin post(title,author,date,link)
+	article.post
+		header.post-header
+			h3.post-title: a(href=link) #{title}
+			h4.post-author: small by #{author}
+			time.post-date(datetime=date) #[i.material-icons schedule] #{date}
+		main.post-preview
+			block
+		footer.post-footer
+			a.btn.btn-block(href=link) Read
+
 mixin wedding(n,d,l,a,bp,c)
 	- var str = l.split(', ')
 	tr(data-wedding-name=n data-wedding-date=d data-wedding-location=l data-wedding-attendance=a data-wedding-role=bp data-wedding-couple=c)
@@ -11,29 +61,3 @@ mixin wedding(n,d,l,a,bp,c)
 				small.label.label-primary #{bp}
 			else
 				span #{bp}
-mixin modal(id,title)
-	.modal(id="#{id}")
-		.modal-overlay
-		.modal-container
-			.modal-header
-				a.btn.btn-clear.float-right(href="##{id}" data-close="modal")
-				.modal-title= title
-			.modal-body
-				block modalBody
-			.modal-footer
-				a.btn.btn-primary(href="##{id}" data-close="modal") Close
-mixin post(title,author,date,link)
-	article.post
-		header.post-header
-			h3.post-title #{title}
-			h4.post-author: small by #{author}
-			time.post-date(datetime=date) #[i.material-icons schedule] #{date}
-		main.post-preview
-			block postPreview
-		footer.post-footer
-			a.btn.btn-block(href=link) Read
-mixin cta(ctaText,ctaBtnText)
-	.col-5
-		div.cta
-			p.text-center= ctaText
-			a.btn.btn-block.btn-primary= ctaBtnText

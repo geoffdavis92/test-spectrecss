@@ -1,7 +1,11 @@
 {
 	"env": "dev",
 	"utilities": ["array_each"],
-	"sitescripts": ["modal"],
+	"sitescripts": ["menu","modal"],
+	"postcrumbs": [{"title":"home","url":"/"},{"title":"posts","url":"/posts"}],
+	"posts": [{"title":"Learning spectre.css","url":"learning-spectre-css"},
+			  {"title":"MyWeddingCalendar","url":"my-wedding-calendar"},
+			  {"title":"Travel: 2013","url":"travel-2013"}],
 	"weddings": [
 		{
 			"name": "Sirridge",
@@ -50,6 +54,5 @@
 			"attending":"yes",
 			"bridalparty":"Groomsman",
 			"couple": ["Ryan Masey","Sam Wolf"]
-		}
-	]
+		}]
 }

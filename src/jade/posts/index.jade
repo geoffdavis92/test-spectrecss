@@ -1,0 +1,12 @@
+extends ../layouts/default
+block pageVariables
+	- var page = {}
+	- page['classList'] = 'posts-index'
+	- page['scripts'] = ['toast']
+	- page['title'] = 'Posts'
+block content
+	+breadcrumbs(postcrumbs)
+	h2 Posts
+	ol.list
+		each post in posts
+			li: a(href="/posts/#{post.url}")= post.title

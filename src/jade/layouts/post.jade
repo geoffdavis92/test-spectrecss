@@ -3,12 +3,15 @@ block pageVariables
 include parts/head
 body.container.layout-post
 	section.columns
-		.column.col-3
-		.column.col-6
-			p.backbtn: a(href="/") &laquo;&nbsp;back
+		.column.col-2
+		.column.col-8
+			//- p.backbtn: a(href="/") &laquo;&nbsp;back
+			+breadcrumbs(postcrumbs)
+				li.breadcrumb-item
+					a= post.title
 			main(class=`post ${page.classList}`)
 				header.post-header
-					h3.post-title #{post.title}
+					h3.post-title #{post.title} #[button.btn.float-right(data-toggle="menu" data-target="share") Share] #[+menu('share',[{title:'Facebook',url:'https://facebook.com'},{title:'Twitter',url:'https://twitter.com'},{title:'Tumblr',url:'http://tumblr.com'},{title:'Reddit',url:'http://reddit.com'}])]
 					h4.post-author: small by #{post.author}
 					time.post-date(datetime=post.date) #[i.material-icons schedule] #{post.date}
 				article.post-body
@@ -16,5 +19,5 @@ body.container.layout-post
 				if post.aboutAuthor
 					footer.post-footer
 						block aboutAuthor
-		.column.col-3
+		.column.col-2
 include parts/footer
